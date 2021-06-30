@@ -1,4 +1,3 @@
-import cjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 import node from 'rollup-plugin-node-resolve'
 import uglify from 'rollup-plugin-uglify'
@@ -6,9 +5,9 @@ import { minify } from 'uglify-es'
 
 const plugins = [
   babel(),
-  cjs({
-    sourceMap: true
-  }),
+  // cjs({
+  //   sourceMap: true
+  // }),
   node()
 ]
 
@@ -22,7 +21,8 @@ export default {
   input: './src/index.js',
   output: {
     file: useMinify ? './dist/stateshot.min.js' : './dist/stateshot.js',
-    format: 'cjs',
+    name:'stateshot',
+    format: 'umd',
     sourcemap: true
   },
   plugins

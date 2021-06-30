@@ -10,7 +10,7 @@
     "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "benchmark": "parcel benchmark/index.html",
     "build:cjs": "rollup -c rollup.config.js",
-    "build:min": "MINIFY=true rollup -c rollup.config.js",
+    "build:min": " set MINIFY=true && rollup -c rollup.config.js",
     "build": "npm run build:cjs && npm run build:min",
     "lint": "standard"
   },
@@ -42,7 +42,6 @@
     "jest": "^23.6.0",
     "rollup": "^0.67.0",
     "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-uglify": "^2.0.1",
     "standard": "^12.0.1",
